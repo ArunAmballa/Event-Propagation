@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        div{
+            padding: 30px;
+            border: 2px solid black;
+            min-width: 100px;
+            min-height: 100px;
+
+        }
+        #simplifyJobsContainer{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Life Cycle</h1>
+    <div id="grandParent">
+        <div id="parent">
+            <div id="child"></div>
+        </div>
+    </div>
+
+    <script>
+
+        // Bubbling Phase
+
+        // document.querySelector("#grandParent").addEventListener('click',function(event){
+        //     console.log("Grand Parent Clicked")
+        // },false) //Bubbling Phase
+
+        // document.querySelector("#parent").addEventListener('click',function(event){
+        //     console.log("Parent Clicked")
+        // },false) //Bubbling Phase
+
+        // document.querySelector("#child").addEventListener('click',function(event){
+        //     console.log("Child Clicked")
+        // },false) //Bubbling Phase
+
+        //Output-Bubbling Phase
+
+        // Child Clicked
+        // Parent Clicked
+        // Grand Parent Clicked
+
+        // Capturing /Trickling  Phase
+
+        // document.querySelector("#grandParent").addEventListener('click',function(event){
+        //     console.log("Grand Parent Clicked")
+        // },true) //Capturing Phase
+
+        // document.querySelector("#parent").addEventListener('click',function(event){
+        //     console.log("Parent Clicked")
+        // },true) //Capturing Phase
+
+        // document.querySelector("#child").addEventListener('click',function(event){
+        //     console.log("Child Clicked")
+        // },true) //Capturing Phase
+
+        // Output- Capturing Phase
+
+        // Grand Parent Clicked
+        // Parent Clicked
+        // Child Clicked
+
+        // Capturing and Bubbling Phase
+
+
+        document.querySelector("#grandParent").addEventListener('click',function(event){
+            console.log("Grand Parent Clicked")
+        },false) //Bubbling Phase
+
+        document.querySelector("#parent").addEventListener('click',function(event){
+            console.log("Parent Clicked")
+        },true) //Capturing Phase
+
+        document.querySelector("#child").addEventListener('click',function(event){
+            console.log("Child Clicked")
+        },false) //Bubbling Phase
+
+        // Output
+        
+        // Parent Clicked
+        // Child Clicked
+        // Grand Parent Clicked
+
+    </script>
+</body>
+</html>
